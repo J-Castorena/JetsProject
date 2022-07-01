@@ -1,0 +1,4 @@
+#type,model,speed,range,price
+passenger,Cessna 172,20,100,120000
+cargojet,Blurry,1000,100000,250000
+,
