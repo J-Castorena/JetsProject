@@ -22,7 +22,7 @@ public class Passenger extends Jet {
 
 	@Override
 	public void fly() {
-		System.out.println("***");
+		System.out.println("Hi Passengers enjoy your flight!");
 	}
 
 	public String getModel() {

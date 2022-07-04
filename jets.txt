@@ -1,6 +1,5 @@
-#type,model,speed,range,price
-passenger,Cessna 172,20,100,120000
-cargoplane,Blurry,1000,100000,250000
-cargoplane,Sonic,7000,900,60000
-fighterjet,Butterfly,750,200,48000
-fighterjet,McBullet,950,400,75000
+passenger,Cessna 172,20.0,100,120000
+cargoplane,Blurry,1000.0,100000,250000
+cargoplane,Sonic,7000.0,900,60000
+fighterjet,Butterfly,750.0,200,48000
+fighterjet,McBullet,950.0,400,75000
