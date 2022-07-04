@@ -21,12 +21,17 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	@Override
 	public void fly() {
-		System.out.println("We are in the air. Transporting your cargo.");
+		double runTime;
+		System.out.println("Type: CargoPlane " + " model: " + model + ", speed: " + speed + "(knots), range: " + range + "(miles), price: $" + price);
+		runTime = range / speed;
+		System.out.println("** This plane can fly for " + runTime + " hours.");
 	}
 
 	@Override
 	public void loadCargo() {
-		System.out.println("Loading all cargo");
+		
+		System.out.println("Cargo Plane: " + model + ". Loading all cargo.");
+		
 	}
 
 	public String getModel() {

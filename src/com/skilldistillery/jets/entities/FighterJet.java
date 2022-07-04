@@ -24,11 +24,14 @@ public class FighterJet extends Jet implements CombatReady {
 
 	@Override
 	public void fly() {
-		System.out.println("Fighter jet flying.");
+		double runTime;
+		System.out.println("Type: Fighter Jet " + " model: " + model + ", speed: " + speed + "(knots), range: " + range + "(miles), price: $" + price);
+		runTime = range / speed;
+		System.out.println("** This jet can fly for " + runTime + " hours.");
 	}
 	
 	public void fight() {
-		System.out.println("LOCKED ON TO TARGET. Engaging. PEW-PEW!!! ");
+		System.out.println("Type: Fighter Jet " + model + ": LOCKED ON TO TARGET. Engaging. PEW-PEW!!! ");
 	}
 
 	public String getModel() {

@@ -22,7 +22,10 @@ public class Passenger extends Jet {
 
 	@Override
 	public void fly() {
-		System.out.println("Hi Passengers enjoy your flight!");
+		double runTime;
+		System.out.println("Type: Passenger Jet " + " model: " + model + ", speed: " + speed + "(knots), range: " + range + "(miles), price: $" + price);
+		runTime = range / speed;
+		System.out.println("** This Jet can fly for " + runTime + " hours.");
 	}
 
 	public String getModel() {

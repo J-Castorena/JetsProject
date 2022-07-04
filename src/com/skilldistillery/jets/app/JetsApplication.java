@@ -89,7 +89,26 @@ public class JetsApplication {
 			case 3:
 				viewFastestJet();
 				break;
-
+			case 4:
+				viewLongestRange();
+				break;
+			case 5:
+				loadingCargoJets();
+				break;
+			case 6:
+				usingCombat();
+				break;
+			case 7:
+				userCreatesJet(userInput);
+				break;
+			case 8:
+				userRemovingJet(userInput);
+				break;
+			case 9:
+				keepChoosing = false;
+				System.out.println("Goodbye!");
+				userInput.close();
+				break;
 			default:
 				System.out.println("Please enter a valid number: ");
 			}
@@ -123,6 +142,86 @@ public class JetsApplication {
 		}
 	}
 
+	private void viewLongestRange() {
+		int longestRange = 0;
+		Jet jetWithLongestRange = null;
+		for (Jet jet : this.airField.getFleet()) {
+			if (jet.getRange() > longestRange) {
+				longestRange = jet.getRange();
+				jetWithLongestRange = jet;
+			}
+		}
+		if (jetWithLongestRange != null) {
+			System.out.println(jetWithLongestRange.toString());
+		} else {
+			System.out.println("Error finding jet with longest range.");
+		}
+	}
+
+	private void loadingCargoJets() {
+		for (Jet jet : this.airField.getFleet()) {
+			if (jet instanceof CargoPlane) {
+				((CargoPlane) jet).loadCargo();
+			}
+			System.out.println();
+		}
+	}
+
+	private void usingCombat() {
+		for (Jet jet : this.airField.getFleet()) {
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+			}
+			System.out.println();
+		}
+	}
+	
+	private void userCreatesJet(Scanner userInput) {
+		System.out.println("Please select a type of jet: 1 for Passenger, 2 for Cargo Plane or 3 for Fighter Jet.");
+		int type = userInput.nextInt();
+		userInput.nextLine();
+		System.out.println("Name your model: ");
+		String model = userInput.nextLine();
+		System.out.println("What is the speed of your jet? ");
+		double speed = userInput.nextDouble();
+		userInput.nextLine();
+		System.out.println("How many miles can your Jet fly? ");
+		int range = userInput.nextInt();
+		System.out.println("What is the price on this Jet? ");
+		long price = userInput.nextLong();
+		switch (type) {
+		case 1:
+			Passenger jet = new Passenger(model, speed, range, price);
+			this.airField.moveJetIntoFleet(jet);
+			System.out.println("Passenger jet created. View Jet on 'List fleet'.");
+			break;
+		case 2:
+			CargoPlane jet2 = new CargoPlane(model, speed, range, price);
+			this.airField.moveJetIntoFleet(jet2);
+			System.out.println("Cargo Plane created. View Jet on 'List fleet'.");
+			break;
+		case 3:
+			FighterJet jet3 = new FighterJet(model, speed, range, price);
+			this.airField.moveJetIntoFleet(jet3);
+			System.out.println("Fighter jet created. View Jet on 'List fleet'.");
+			break;
+		default:
+			System.out.println("Jet was not created. Please try again.");
+		}
+	}
+
+	private void userRemovingJet(Scanner userInput) {
+		System.out.println("Please select the jet you would like to remove: ");
+		int index = 1;
+		for (Jet jet : this.airField.getFleet()) {
+			System.out.println(index++ + " " + jet.toString());
+		}
+		int deletion = userInput.nextInt();
+		this.airField.getFleet().remove(deletion - 1);
+		System.out.println("Successfully removed jet. View updated fleet on 'List fleet' option.");
+	}
+	
+	
 	private void menu() {
 		System.out.println("------------------------------------");
 		System.out.println("--              MENU              --");

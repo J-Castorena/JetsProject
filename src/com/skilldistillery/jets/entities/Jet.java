@@ -10,7 +10,6 @@ public abstract class Jet {
 	public Jet() {
 		super();
 	}
-
 	
 	public Jet(String model, double speed, int range, long price) {
 		super();

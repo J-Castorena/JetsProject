@@ -1,5 +1,5 @@
 passenger,Cessna 172,20.0,100,120000
 cargoplane,Blurry,1000.0,100000,250000
-cargoplane,Sonic,7000.0,900,60000
+cargoplane,Sonic,700,15000,60000
 fighterjet,Butterfly,750.0,200,48000
 fighterjet,McBullet,950.0,400,75000
