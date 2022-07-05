@@ -6,4 +6,5 @@ Starting the application, the AirField will populate with 5 pre-made jets for th
 #Technologies Used
 Java, git, Interfaces, Polymorphism, Inheritance, I/O.
 
-#Lessons Learned# JetsProject
+#Lessons Learned#
+This project helped me understand the importance of Polymorphism. I can now see how inheritance and polymorphism go hand in hand. The child classes inherited methods and properties from the parent class but we were able to give them unique functions. Using the '@override' quality takes a big roll on what the system will use when the parent class and the child class hold similar methods.
